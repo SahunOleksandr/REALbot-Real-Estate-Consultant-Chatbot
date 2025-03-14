@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REALbot - Elite Properties Group</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1><span class="highlight">REAL</span>bot</h1>
+        <p>Elite Properties Group</p>
+      </div>
+    </header>
+    
+    <main>
+      <section class="chat-container">
+        <div class="chat-header">
+          <h2>Real Estate Assistant</h2>
+          <button id="resetChat" class="reset-button">
+            <i class="fas fa-redo"></i> New Chat
+          </button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <!-- Messages will be inserted here dynamically -->
+        </div>
+        
+        <div class="chat-input">
+          <textarea id="userInput" placeholder="Ask me anything about real estate..."></textarea>
+          <button id="sendButton">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </section>
+      
+      <section class="info-panel">
+        <div class="panel-card">
+          <h3>About REALbot</h3>
+          <p>REALbot is your AI real estate assistant. I can help with:</p>
+          <ul>
+            <li>Answering questions about buying property</li>
+            <li>Explaining mortgage options</li>
+            <li>Providing information about neighborhoods</li>
+            <li>Connecting you with our real estate agents</li>
+          </ul>
+        </div>
+        
+        <div class="panel-card sample-questions">
+          <h3>Sample Questions</h3>
+          <ul>
+            <li><button class="question-btn">What are the steps to buy a house?</button></li>
+            <li><button class="question-btn">How do I qualify for a mortgage?</button></li>
+            <li><button class="question-btn">What documents do I need?</button></li>
+            <li><button class="question-btn">What hidden costs should I know about?</button></li>
+            <li><button class="question-btn">Is now a good time to invest in property?</button></li>
+          </ul>
+        </div>
+        
+        <div class="panel-card contact-form" id="contactForm" style="display: none;">
+          <h3>Ready to view properties?</h3>
+          <p>Leave your contact details and our agent will get in touch with you.</p>
+          <form id="agentContactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="bestTime">Best time to contact</label>
+              <select id="bestTime" name="bestTime">
+                <option value="morning">Morning (9am-12pm)</option>
+                <option value="afternoon">Afternoon (12pm-5pm)</option>
+                <option value="evening">Evening (5pm-8pm)</option>
+              </select>
+            </div>
+            <button type="submit" class="submit-btn">Connect with Agent</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    
+    <footer>
+      <p>© 2025 Elite Properties Group. All rights reserved.</p>
+      <p>
+        <a href="#" id="adminLink">Admin</a> |
+        <a href="#" id="privacyLink">Privacy Policy</a>
+      </p>
+    </footer>
+    
+    <!-- Admin Modal -->
+    <div id="adminModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Admin Dashboard</h2>
+        
+        <div class="admin-tabs">
+          <button class="tab-btn active" data-tab="analytics">Analytics</button>
+          <button class="tab-btn" data-tab="knowledge">Knowledge Base</button>
+        </div>
+        
+        <div class="admin-tab-content">
+          <div id="analyticsTab" class="tab-panel active">
+            <h3>Question Analytics</h3>
+            <div class="analytics-cards">
+              <div class="analytics-card">
+                <h4>Top Keywords</h4>
+                <div id="keywordsChart" class="chart-container"></div>
+              </div>
+              <div class="analytics-card">
+                <h4>Conversations by Day</h4>
+                <div id="conversationsChart" class="chart-container"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="knowledgeTab" class="tab-panel">
+            <h3>Knowledge Base Management</h3>
+            <p>Add, edit, or remove questions and answers in the knowledge base.</p>
+            <div id="knowledgeEditor"></div>
+            <div class="action-buttons">
+              <button id="addQuestion" class="action-btn">Add Question</button>
+              <button id="saveKnowledge" class="action-btn primary">Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

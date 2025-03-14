@@ -1,0 +1,14 @@
+/**
+ * Local configuration overrides - NOT committed to version control
+ * Copy this file to local.js and add your local configuration settings
+ */
+module.exports = {
+    openai: {
+      // Add your API key here for local development
+      apiKey: 'your-api-key-here'
+    },
+    // Any other local overrides
+    server: {
+      // port: 3001  // Uncomment to override the default port
+    }
+  };
